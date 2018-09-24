@@ -119,7 +119,7 @@ namespace LongArithmetic {
 			ulong[] b = Padding(num.number, maxlen);
 			ulong[] array = new ulong[maxlen];
 			if (Сomparison(a, b) == b) {
-				Console.WriteLine("Answer is a negative number! The secong operand is bigger that the first. Please, correct this. Look at these: \n");
+				Console.WriteLine("Answer is a negative number! The secong operand is bigger that the first. Please, correct this. Look at them: \n");
 				Console.WriteLine(this.ToHex());
 				return num;
 			}
