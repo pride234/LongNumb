@@ -19,7 +19,7 @@ namespace LongArithmetic {
 
 		BigInteger a = new BigInteger ("FFFFDDAADADF");
 		BigInteger b = new BigInteger ("51AADAADF"); 
-		Console.WriteLine(a.Sub(b).ToHex());
+		Console.WriteLine(a.Deduct(b).ToHex());
 		Console.ReadKey();
 		}
 	}
@@ -61,7 +61,7 @@ namespace LongArithmetic {
 		}
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-		public ulong[] Comp(ulong[] a, ulong[] b){
+		public ulong[] Сomparison(ulong[] a, ulong[] b){
 			
 			int i = a.Length - 1;
 			if (a[i] > b[i]) return a;
@@ -113,12 +113,12 @@ namespace LongArithmetic {
 		}
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-		public BigInteger Sub(BigInteger num) {
+		public BigInteger Deduct(BigInteger num) {
 			int maxlen =  this.number.Length >= num.number.Length ? this.number.Length : num.number.Length;
 			ulong[] a = Padding(this.number, maxlen);
 			ulong[] b = Padding(num.number, maxlen);
 			ulong[] array = new ulong[maxlen];
-			if (Comp(a, b) == b) {
+			if (Сomparison(a, b) == b) {
 				Console.WriteLine("Answer is a negative number! The secong operand is bigger that the first. Please, correct this. Look at these: \n");
 				Console.WriteLine(this.ToHex());
 				return num;
