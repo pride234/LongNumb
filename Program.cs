@@ -114,6 +114,7 @@ namespace LongArithmetic {
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 		public BigInteger Deduct(BigInteger num) {
+			
 			int maxlen =  this.number.Length >= num.number.Length ? this.number.Length : num.number.Length;
 			ulong[] a = Padding(this.number, maxlen);
 			ulong[] b = Padding(num.number, maxlen);
