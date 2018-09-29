@@ -18,8 +18,8 @@ namespace LongArithmetic {
 			
 		static void Main(string[] args) {
 
-		BigInteger a = new BigInteger ("400");
-		BigInteger b = new BigInteger ("600"); 
+		BigInteger a = new BigInteger ("ADFFAFDFAFDFADAD321651513151315ADAFDFADFFAD24654564531ADADFADAD31351AD");
+		BigInteger b = new BigInteger ("ADFFADFFADFFAFDFFFFADFFFAD664564FFADFFFAFDF"); 
 		BigInteger c = new BigInteger ("567B1E8281B6CF8D02C4B193A461B04737CB05B0A0C2CDEB1D6EDEC7928731C1AAC6716AE1DE1B8E503DE696E90CF99A8E7E6186D89F6F90360728C725808FD0");
 		//BigInteger d = new BigInteger(a.BinaryNotion(a.ToBinary()).Deduct(b.BinaryNotion(b.ToBinary())).ToHex());
 		//Console.WriteLine(c.BinaryArray(a.ToBinary()).ToHex());
@@ -27,7 +27,7 @@ namespace LongArithmetic {
 		
 		//Console.WriteLine(c.HexNotion("567B1E8281B6CF8D02C4B193A461B04737CB05B0A0C2CDEB1D6EDEC7928731C1AAC6716AE1DE1B8E503DE696E90CF99A8E7E6186D89F6F90360728C725808FD0").ToHexHex());
 		
-		Console.WriteLine(a.Gorner(b).ToHex());
+		Console.WriteLine(a.Gorner(b).ToHexHex());
 		Console.ReadKey();
 		}
 	}
@@ -65,6 +65,22 @@ namespace LongArithmetic {
 			for (int j = 0; j<humanresult.Length; j++) humanresult[j] = array[j];
 			result.number = humanresult;
 			return result;			 
+		}
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+		private BigInteger AuxiliaryMultForGorner (BigInteger num, ulong b){
+						
+			ulong carry = 0, temp;
+			ulong[] array = new ulong[num.number.Length+1];
+
+			for (int i = 0; i < num.number.Length; i++) {
+				temp = num.number[i]*b + carry;
+				array[i] = temp & 0xF;
+				carry = temp >> 0x10;
+			}
+
+			array[num.number.Length] = carry;
+			return Humanresult(array, num.number.Length+1);
 		}
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -116,10 +132,13 @@ namespace LongArithmetic {
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 		public BigInteger HexNotion(string hex) {
+			
+			BigInteger A = new BigInteger();
 
-			this.number = new ulong[hex.Length];
-			for(int i = hex.Length-1; i >= 0;i--) this.number[hex.Length-1-i] = Convert.ToUInt64(hex.Substring(i, 1), 16);
-			return this;
+			A.number = new ulong[hex.Length];
+
+			for(int i = hex.Length-1; i >= 0;i--) A.number[hex.Length-1-i] = Convert.ToUInt64(hex.Substring(i, 1), 16);
+			return A;
 		}
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -229,6 +248,21 @@ namespace LongArithmetic {
 		}
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
+		public BigInteger MultiplyForGorner (BigInteger num) {
+						
+			BigInteger temp = new BigInteger();
+			BigInteger result = new BigInteger();
+		
+			for (int i = 0; i<num.number.Length; i++){
+				temp = AuxiliaryMultForGorner(this, num.number[i]);
+				temp.number = ToShiftDigitsToRight(temp.number, i);
+				result = result.Add(temp);
+			}
+
+			return result;
+		}
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
 		public BigInteger Multiply (BigInteger num) {
 						
 			BigInteger temp = new BigInteger();
@@ -292,78 +326,33 @@ namespace LongArithmetic {
 
 		public BigInteger Gorner(BigInteger num) {
 
-			BigInteger A = new BigInteger();
-			BigInteger C = new BigInteger("1");
-			BigInteger[] D = new BigInteger[15];
-			C = C.HexNotion(C.ToHex());
-			C.number = Padding(C.number,(this.HexNotion(this.ToHex()).number.Length)*(num.HexNotion(num.ToHex()).number.Length));
-			A = this.HexNotion(this.ToHex());
-			D[0] = C; 
-			D[1] = A;
 			
-			for (int i = 2; i < 15; i++) D[i] = D[i-1].Multiply(A);
-		
-			for (int i = num.HexNotion(num.ToHex()).number.Length- 1; i>=0; i --) {
-				C = C.Multiply(D[num.HexNotion(num.ToHex()).number[i]]);	
+			BigInteger C = new BigInteger("1");
+			BigInteger zero = new BigInteger();
+			zero.number = Padding(zero.number, num.number.Length);
+			if (num.Comprassion(zero) == 0) {
+				return C;
+			}
+			BigInteger[] D = new BigInteger[16];
+		 
+			D[0] = C.HexNotion(C.ToHex());; 
+			D[1] = this;
+			
+			for (int i = 2; i < 16; i++) D[i] = D[i-1].Multiply(this);
+				
+			for (int i = 1; i < 16; i++) D[i] = D[i].HexNotion(D[i].ToHex());
+	
+			
+			for (int i = num.HexNotion(num.ToHex()).number.Length - 1; i>=0; i --) {
+				C = C.MultiplyForGorner(D[num.HexNotion(num.ToHex()).number[i]]);	
 				if (i != 0) {
-					for (int k = 1; k>4; k++) C = C.Multiply(C);
+					for (int k = 1; k>4; k++) C = C.MultiplyForGorner(C);
 				}
 			}
 			return Humanresult(C.number, C.number.Length);
 		}
-		
-		
-		
-		
-		
-		
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		//	BigInteger C = new BigInteger("1");
-		//	//long len = Convert.ToUInt32(Math.Pow(2,32)-1);
-		//	//int l = 8;
-		//	//BigInteger[] D = new BigInteger[uint.l];
-			
-		//	C.number = Padding(C.number,(this.number.Length)*(num.number.Length));
-
-		//	//D[0] = C;
-		//	//D[1] = this;
-
-		//	//for(ulong i = 2;i < 0xFFFFFFFF;i++) {
-		//	//	D[i] = D[i-1].Multiply(this);
-		//	//}
-		//	BigInteger A = new BigInteger("1");
-		//	for(int i = num.number.Length;i>=0;i--) {
-				
-		//		for (int j = 0; j<i; j++) A = A.Multiply(this);
-		//		C = C.Multiply(A);
-		//		if(i != 0) {
-		//			for(int k = 1;k <32;k++) C = C.Multiply(C);
-		//		}
-		//	}
-
-		//	return C;
-		//}
-		//----------------------EndOfBigIntegerClass------------------------------------------------------------------------------------------------------------------------------------------|
-		//----------------------EndOfBigIntegerClass------------------------------------------------------------------------------------------------------------------------------------------|
+//----------------------EndOfBigIntegerClass------------------------------------------------------------------------------------------------------------------------------------------|
+//----------------------EndOfBigIntegerClass------------------------------------------------------------------------------------------------------------------------------------------|
 	}
 	//----------------------EndOfnamespase------------------------------------------------------------------------------------------------------------------------------------------------|
 	//----------------------EndOfnamespase------------------------------------------------------------------------------------------------------------------------------------------------|
