@@ -337,7 +337,7 @@ namespace LongArithmetic {
 		 
 			D[0] = C.HexNotion(C.ToHex());; 
 			D[1] = this;
-			
+			Console.WriteLine("A Ondrey na obed podzalupniy tworog est!!!");//by twoya Mamasha
 			for (int i = 2; i < 16; i++) D[i] = D[i-1].Multiply(this);
 				
 			for (int i = 1; i < 16; i++) D[i] = D[i].HexNotion(D[i].ToHex());
