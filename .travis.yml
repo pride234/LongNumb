@@ -1,2 +1,9 @@
 language: csharp
-solution: LongArithmetic.sln
+script:
+  - xbuild /p:Configuration=Debug LongArithmetic.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore LongArithmetic.sln
+after_script:
+  - nunit-console LongArithmeticTests/bin/Debug/LongArithmeticTests.dll
