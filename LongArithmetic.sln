@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongArithmetic", "LongArithmetic\LongArithmetic.csproj", "{C25D0BD6-E7D6-48C1-8D1D-9D46829AD139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongArithmeticTests", "LongArithmeticTests\LongArithmeticTests.csproj", "{12C16467-4C52-475A-96CA-925FD3EDB6DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C25D0BD6-E7D6-48C1-8D1D-9D46829AD139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25D0BD6-E7D6-48C1-8D1D-9D46829AD139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25D0BD6-E7D6-48C1-8D1D-9D46829AD139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25D0BD6-E7D6-48C1-8D1D-9D46829AD139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C16467-4C52-475A-96CA-925FD3EDB6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C16467-4C52-475A-96CA-925FD3EDB6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C16467-4C52-475A-96CA-925FD3EDB6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C16467-4C52-475A-96CA-925FD3EDB6DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE133DDB-D919-43FD-A62F-8AF60E49E1DE}
+	EndGlobalSection
+EndGlobal

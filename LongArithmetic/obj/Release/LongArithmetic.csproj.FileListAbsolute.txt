@@ -1,0 +1,7 @@
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmetic\bin\Release\LongArithmetic.exe.config
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmetic\bin\Release\LongArithmetic.exe
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmetic\bin\Release\LongArithmetic.pdb
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmetic\obj\Release\LongArithmetic.csproj.CoreCompileInputs.cache
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmetic\obj\Release\LongArithmetic.exe
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmetic\obj\Release\LongArithmetic.pdb
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmetic\obj\Release\LongArithmetic.csprojAssemblyReference.cache

@@ -1,0 +1,12 @@
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\bin\Debug\LongArithmeticTests.dll
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\bin\Debug\LongArithmeticTests.pdb
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\bin\Debug\LongArithmetic.exe
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\bin\Debug\nunit.framework.dll
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\bin\Debug\LongArithmetic.pdb
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\bin\Debug\LongArithmetic.exe.config
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\bin\Debug\nunit.framework.xml
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\obj\Debug\LongArithmeticTests.csprojAssemblyReference.cache
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\obj\Debug\LongArithmeticTests.csproj.CoreCompileInputs.cache
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\obj\Debug\LongArithmeticTests.csproj.CopyComplete
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\obj\Debug\LongArithmeticTests.dll
+C:\Users\PRIDE\source\repos\LongArithmetic\LongArithmeticTests\obj\Debug\LongArithmeticTests.pdb
